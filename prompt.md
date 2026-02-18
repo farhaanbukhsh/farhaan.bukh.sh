@@ -62,3 +62,9 @@ execute the plan
 - Removed old files: root `index.html`, `talks.html`, `talks.md`, `assets/js/talks.js`.
 - Updated `.github/workflows/deploy.yml` to install uv + just, run `just build`, deploy `dist/`.
 - Updated `README.md`, `agents.md`, `prompt.md`.
+
+## 2026-02-18 17:30 IST — Remove Talks Preview from Home
+```
+remove the talk and workshop section from the front page run the changes before making it.
+```
+**Outcome**: Removed the `talks-preview` section from `templates/index.html`, dropped the three `talks_preview_*` frontmatter fields from `content/index.md`, and cleaned up the corresponding render args in `build.py`. Rebuilt with `just clean && just build && just check` — all passing, section confirmed absent from `dist/index.html`. Talks page (`talks.html`) and nav link remain intact.

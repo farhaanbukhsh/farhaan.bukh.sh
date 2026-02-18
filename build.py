@@ -79,9 +79,6 @@ def build():
         links_heading=index_data.get("links_heading", ""),
         links_sub=index_data.get("links_sub", ""),
         links=index_data.get("links", []),
-        talks_preview_eyebrow=index_data.get("talks_preview_eyebrow", ""),
-        talks_preview_heading=index_data.get("talks_preview_heading", ""),
-        talks_preview_sub=index_data.get("talks_preview_sub", ""),
     )
     (DIST_DIR / "index.html").write_text(index_html)
     print("  ✓ dist/index.html")

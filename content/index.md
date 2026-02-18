@@ -75,7 +75,4 @@ links:
     url: "talks.html"
     external: false
 
-talks_preview_eyebrow: "Talks & Workshops"
-talks_preview_heading: "Stories I've told on stage."
-talks_preview_sub: "Every talk lives inside <code>talks.md</code>. Update the markdown, ship the site, repeat."
 ---

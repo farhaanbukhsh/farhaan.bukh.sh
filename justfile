@@ -16,8 +16,8 @@ build: setup
 
 # Serve dist/ locally for preview
 serve: build
-    @echo "Serving dist/ at http://localhost:5000"
-    uv run python -m http.server 5000 --directory dist
+    @echo "Serving dist/ at http://localhost:5001"
+    uv run python -m http.server 5001 --directory dist
 
 # Remove generated output
 clean:
