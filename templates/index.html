@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main>
+    <section class="hero" id="mission">
+      <div class="hero__profile">
+        <div class="avatar-frame">
+          <img src="assets/img/avatar.png" alt="Portrait of Farhaan Bukhsh" width="240" height="240" loading="lazy" />
+          <div class="avatar-glow" aria-hidden="true"></div>
+        </div>
+        <p class="status-chip">{{ status_chip }}</p>
+      </div>
+      <div class="hero__copy">
+        <p class="eyebrow">{{ eyebrow }} <span>{{ eyebrow_sub }}</span></p>
+        <h1>{{ headline }}</h1>
+        <p>{{ bio }}</p>
+        <div class="cta-row">
+          {% for btn in cta %}
+          <a class="btn btn--{{ btn.style }}" href="{{ btn.url }}">{{ btn.label }}</a>
+          {% endfor %}
+        </div>
+        <ul class="hero__meta" role="list">
+          {% for item in meta %}
+          <li>
+            <span>{{ item.label }}</span>
+            {{ item.text }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <section class="links" id="links">
+      <div class="section-heading">
+        <p class="eyebrow">{{ links_eyebrow }}</p>
+        <h2>{{ links_heading }}</h2>
+        <p>{{ links_sub }}</p>
+      </div>
+      <div class="link-grid">
+        {% for card in links %}
+        <a class="link-card{% if card.accent %} accent{% endif %}" href="{{ card.url }}"{% if card.external %} target="_blank" rel="noopener"{% endif %}>
+          <span class="link-card__label">{{ card.label }}</span>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.description }}</p>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="talks-preview">
+      <div class="section-heading">
+        <p class="eyebrow">{{ talks_preview_eyebrow }}</p>
+        <h2>{{ talks_preview_heading }}</h2>
+        <p>{{ talks_preview_sub }}</p>
+      </div>
+      <div class="talks-preview__card">
+        <h3>Talk log</h3>
+        <p>
+          The full list auto-builds from <strong>talks.md</strong> using a lightweight markdown renderer. Add titles,
+          events, links, and the UI reflects it instantly.
+        </p>
+        <ul>
+          <li>Supports sections like Upcoming, 2025, Archive, etc.</li>
+          <li>Link slides, recordings, or blog posts for each entry.</li>
+          <li>Markdown remains the source of truth inside the repo.</li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn btn--primary" href="talks.html">View talks page</a>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

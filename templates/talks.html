@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block nav_items %}
+        <a href="index.html#mission">Mission log</a>
+        <a href="index.html#links">Signal relays</a>
+        <a class="is-active" href="talks.html" aria-current="page">Talks</a>
+        <a href="https://journal.farhaan.me" target="_blank" rel="noopener">Blog</a>
+        <a class="nav__resume" href="https://farhaan.me/resume.pdf" target="_blank" rel="noopener">Resume</a>
+{% endblock %}
+
+{% block content %}
+  <main class="talks-page">
+    <section class="page-hero">
+      <p class="eyebrow">Talks, workshops, panels</p>
+      <h1>Because storytelling keeps the stack human.</h1>
+      <p>
+        This page is built from <code>content/talks.md</code>. Edit the markdown, commit, and GitHub Pages rebuilds automatically.
+        Add sections (Upcoming, 2026, Archive), link slides or recordings, and keep the Hitchhiker energy alive.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn--ghost" href="/">Back to home</a>
+      </div>
+    </section>
+
+    <section class="talks-feed" id="talks-content">
+      {{ talks_html }}
+    </section>
+  </main>
+{% endblock %}

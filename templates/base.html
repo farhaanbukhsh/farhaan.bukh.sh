@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="nebula">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ description }}" />
+  <title>{{ title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&family=VT323&family=Chakra+Petch:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/img/avatar.png" />
+</head>
+<body data-font="sleek">
+  <div class="background-noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="/">Farhaan<span>Bukhsh</span></a>
+      <button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav__links" data-nav-links>
+        {% block nav_items %}
+        <a href="#mission">Mission log</a>
+        <a href="#links">Signal relays</a>
+        <a href="talks.html">Talks</a>
+        <a href="https://journal.farhaan.me" target="_blank" rel="noopener">Blog</a>
+        <a class="nav__resume" href="https://farhaan.me/resume.pdf" target="_blank" rel="noopener">Resume</a>
+        {% endblock %}
+      </div>
+    </nav>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer class="site-footer">
+    <p>© {{ year }} Farhaan Bukhsh · Crafted with curiosity. Don't Panic.</p>
+    <p>
+      Hosted on GitHub Pages · <a href="https://github.com/farhaanbukhsh" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
