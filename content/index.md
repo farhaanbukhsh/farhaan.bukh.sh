@@ -26,7 +26,7 @@ links:
   - label: "Resume"
     title: "Resume / CV"
     description: "PDF snapshot with roles, impact, speaking, and leadership highlights."
-    url: "https://farhaan.me/resume.pdf"
+    url: "assets/resume.pdf"
     icon: "scroll"
     external: true
     accent: true

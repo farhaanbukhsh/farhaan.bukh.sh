@@ -25,7 +25,8 @@ This is a **static site with a Python build step**. Markdown content files are c
 │   ├── img/icons/                 # Pixel-art SVG icons (sword, book, scroll, etc.)
 │   │                              # Also backdrop decorations: flower, tnt, axe,
 │   │                              # grass-block, creeper, potion, heart, star
-│   └── js/main.js                 # Nav toggle, inventory tray toggle, year stamp
+│   ├── js/main.js                 # Nav toggle, inventory tray toggle, year stamp
+│   └── resume.pdf                 # Resume PDF (copied verbatim into dist/)
 ├── content/                       # Editable markdown source files
 │   ├── index.md                   # Home page data (YAML frontmatter + markdown body)
 │   └── talks.md                   # Talks list (pure markdown)
@@ -91,6 +92,7 @@ This is a **static site with a Python build step**. Markdown content files are c
 - **Home page**: edit `content/index.md`. YAML frontmatter controls structured data (links with `icon` field). Markdown body controls bio prose. Note: hero CTAs and meta badges were removed; hero is a single stacked column with centered avatar + status chip above the headline.
 - **Link icons**: each link entry in `content/index.md` has an `icon` field (e.g. `book`, `scroll`, `pickaxe`). The matching SVG lives at `assets/img/icons/<icon>.svg`. Icons are scaled to ~56px in the inventory tray; keep pixel-art style (16×16 source) with `shape-rendering="crispEdges"`.
 - **Avatar**: replace `assets/img/avatar.png` (keep square dimensions).
+- **Resume**: replace `assets/resume.pdf`. It is referenced in `templates/base.html`, `templates/talks.html`, and `content/index.md` as `assets/resume.pdf`. Copied verbatim into `dist/assets/` by the build.
 - **Palette**: adjust CSS variables at top of `assets/css/style.css`.
 - **Backdrop items**: 18 decorative Minecraft pixel-art SVGs are scattered across the page via `.backdrop-items` in `templates/base.html`. Each `<img>` uses a `.backdrop-item--N` class positioned/rotated via CSS custom properties in `assets/css/style.css`. To add/remove items: edit the HTML list in `base.html` and the corresponding `.backdrop-item--N` CSS rule. Items are fixed-position, opacity 0.35 with saturated/brightened filter, with a gentle float animation. 9 of 18 are hidden on mobile (<640px).
 - **Inventory button (chocolate bar)**: The "Open Inventory" button is styled as a Minecraft chocolate bar. Dark chocolate body (`#1c1008`) with grid-square pattern, white paper/foil strip (`::before`) across the middle extending beyond edges, pink wrapper (`::after`) covering the bottom 55% with concentric pink/white banding. The whole button wobbles via `@keyframes choco-bob` (±2° rotation, 6px float, 2.5s). On hover: animation pauses, wrapper and foil slide down ~14–18px (stay visible, don't disappear). Label ("Open Inventory") sits on the chocolate face in normal flow. No sword icon — removed.

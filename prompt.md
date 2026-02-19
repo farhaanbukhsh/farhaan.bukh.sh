@@ -153,3 +153,36 @@ The wrapper should not dissapear but move a bit down, the "Open Inventory" text 
 - Wrapper hover changed from fade-out to gentle peek-down: pink wrapper slides 18px, foil strip slides 14px, both stay fully visible.
 - Button enlarged: `padding: 1.8rem 3.2rem 3rem`, `min-width: 240px`, `min-height: 130px`.
 - Rebuilt: `just clean && just build && just check` (all green).
+
+## 2026-02-19 02:30 IST — Remove "Signal relays" mentions everywhere
+```
+Remove signal relay mention from the top bar every where
+```
+**Outcome**:
+- Removed "Signal relays" nav link from `templates/talks.html`.
+- Changed `aria-label` on inventory tray from "Inventory — Signal relays" to "Inventory" in `templates/index.html`.
+- Changed `links_eyebrow` from "Signal relays" to "Inventory" in `content/index.md`.
+- Rebuilt: `just clean && just build && just check` (all green). Zero matches for "signal relay" in `dist/`.
+
+## 2026-02-19 02:45 IST — Front page fit in one screen
+```
+Can we make the front page fit in one screen where the user need not have to scroll?
+```
+**Outcome**:
+- Tightened padding/margins/gaps only (avatar and button kept at original sizes).
+- `main`: padding `0.5rem`, vertically centered via flexbox + `min-height: calc(100vh - ...)`.
+- Hero: margin-top `0`, gap `clamp(0.6rem,1.5vw,1.2rem)`, stacked/avatar-block gaps `0.4rem/0.3rem`.
+- Inventory section: margin-top `1rem`.
+- Footer: padding `0.5rem/0.8rem`.
+- Rebuilt: `just clean && just build && just check` (all green).
+
+## 2026-02-19 03:00 IST — Replace resume with local PDF
+```
+Plan to replace the resume link with ~/Downloads/resume.pdf
+```
+**Outcome**:
+- Copied `~/Downloads/resume.pdf` to `assets/resume.pdf`.
+- Updated all references from `https://farhaan.me/resume.pdf` to `assets/resume.pdf` in `templates/base.html`, `templates/talks.html`, and `content/index.md`.
+- PDF copied verbatim into `dist/assets/resume.pdf` by existing build pipeline.
+- Updated `agents.md` (repo layout, resume docs).
+- Rebuilt: `just clean && just build && just check` (all green).
