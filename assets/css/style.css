@@ -136,7 +136,11 @@ body::after {
 main {
   width: min(1100px, 90vw);
   margin: 0 auto;
-  padding: 3rem 0 5rem;
+  padding: 0.5rem 0 0.5rem;
+  min-height: calc(100vh - 56px - 2.5rem); /* header ~56px + footer ~2.5rem */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 img {
@@ -238,22 +242,22 @@ code {
 .hero {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  gap: clamp(0.6rem, 1.5vw, 1.2rem);
   align-items: center;
   justify-items: center;
-  margin-top: 3rem;
+  margin-top: 0;
   text-align: center;
 }
 
 .hero__copy--stacked {
   display: grid;
-  gap: 1.2rem;
+  gap: 0.4rem;
   justify-items: center;
 }
 
 .hero__avatar-block {
   display: grid;
-  gap: 0.6rem;
+  gap: 0.3rem;
   justify-items: center;
 }
 
@@ -284,11 +288,11 @@ code {
   display: inline-flex;
   gap: 0.5rem;
   align-items: center;
-  margin-top: 1rem;
-  padding: 0.4rem 1rem;
+  margin-top: 0.2rem;
+  padding: 0.25rem 0.8rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--color-cloud);
 }
 
@@ -366,8 +370,8 @@ code {
 /* ── Inventory tray (Minecraft UI) ─────────────────────────────── */
 
 .inventory-section {
-  margin-top: 4rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -735,9 +739,9 @@ code {
 
 .site-footer {
   text-align: center;
-  padding: 2rem 1rem 3rem;
+  padding: 0.5rem 1rem 0.8rem;
   color: var(--color-cloud);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .site-footer a {
