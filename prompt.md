@@ -90,3 +90,16 @@ Plan to remove the "Signal Relay" from the header, the next set of tasks are 1. 
 - Removed hero CTAs (Open comms, View talks) and meta list (Now/Previously/Keywords) from `templates/index.html`; removed meta/cta entries from `content/index.md`.
 - Reflowed hero to a single stacked column: eyebrow → centered avatar + status chip → headline → paragraph. Updated CSS for center layout.
 - Rebuilt: `just clean && just build && just check` (all green).
+
+## 2026-02-19 00:30 IST — Minecraft backdrop items
+```
+Plan to add minecraft item in the backdrop of the website, like minecraft flowers, tnt, axe etc.
+```
+**Outcome**:
+- Created 8 new 16×16 pixel-art SVGs in `assets/img/icons/`: flower (red poppy), tnt, axe (iron), grass-block, creeper (face), potion (purple bottle), heart, star.
+- Added a `<div class="backdrop-items">` layer in `templates/base.html` containing 18 `<img>` elements (mix of new + existing icons), all `aria-hidden="true"`.
+- Added CSS in `assets/css/style.css`: `.backdrop-items` is fixed fullscreen, z-index: -1, pointer-events: none. Each `.backdrop-item--N` (1–18) is absolutely positioned with unique top/left/right, width (34–56px), rotation via `--rot` custom property, and staggered `animation-delay` on a gentle `backdrop-float` keyframe (translateY ±10px, 10s infinite alternate). Opacity set to 0.07 for subtlety.
+- 9 of 18 items hidden on mobile (<640px) to reduce clutter.
+- No JS needed — pure CSS animations with `will-change: transform` for GPU compositing.
+- Updated `agents.md` (repo layout, backdrop docs, QA checklist).
+- Rebuilt: `just clean && just build && just check` (all green).

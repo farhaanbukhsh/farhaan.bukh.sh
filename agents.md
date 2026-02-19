@@ -21,13 +21,16 @@ This is a **static site with a Python build step**. Markdown content files are c
 ├── assets/                        # Static assets (copied verbatim into dist/)
 │   ├── css/style.css
 │   ├── img/avatar.png
+│   ├── img/favicon.png
 │   ├── img/icons/                 # Pixel-art SVG icons (sword, book, scroll, etc.)
+│   │                              # Also backdrop decorations: flower, tnt, axe,
+│   │                              # grass-block, creeper, potion, heart, star
 │   └── js/main.js                 # Nav toggle, inventory tray toggle, year stamp
 ├── content/                       # Editable markdown source files
 │   ├── index.md                   # Home page data (YAML frontmatter + markdown body)
 │   └── talks.md                   # Talks list (pure markdown)
 ├── templates/                     # Jinja2 HTML templates
-│   ├── base.html                  # Shared shell (head, nav, footer)
+│   ├── base.html                  # Shared shell (head, nav, footer, backdrop items)
 │   ├── index.html                 # Home page (hero, inventory tray)
 │   └── talks.html                 # Talks page (pre-rendered markdown)
 ├── build.py                       # Python build script
@@ -89,6 +92,7 @@ This is a **static site with a Python build step**. Markdown content files are c
 - **Link icons**: each link entry in `content/index.md` has an `icon` field (e.g. `book`, `scroll`, `pickaxe`). The matching SVG lives at `assets/img/icons/<icon>.svg`. Icons are scaled to ~56px in the inventory tray; keep pixel-art style (16×16 source) with `shape-rendering="crispEdges"`.
 - **Avatar**: replace `assets/img/avatar.png` (keep square dimensions).
 - **Palette**: adjust CSS variables at top of `assets/css/style.css`.
+- **Backdrop items**: 18 decorative Minecraft pixel-art SVGs are scattered across the page via `.backdrop-items` in `templates/base.html`. Each `<img>` uses a `.backdrop-item--N` class positioned/rotated via CSS custom properties in `assets/css/style.css`. To add/remove items: edit the HTML list in `base.html` and the corresponding `.backdrop-item--N` CSS rule. Items are fixed-position, low opacity (0.07), with a gentle float animation. 9 of 18 are hidden on mobile (<640px).
 - **Typography**: change `data-font` attribute in `templates/base.html` and corresponding CSS selectors.
 
 ## 8. QA Checklist Before Deploy
@@ -103,6 +107,7 @@ This is a **static site with a Python build step**. Markdown content files are c
 - [ ] `dist/talks.html` contains pre-rendered talk content (no loading spinner).
 - [ ] All external links open in new tabs where intended.
 - [ ] `dist/CNAME` contains `farhaan.bukh.sh`.
+- [ ] Backdrop items visible as faint floating Minecraft icons behind content; non-interactive (`pointer-events: none`).
 - [ ] No `talks.js` or `marked.min.js` references remain in generated HTML.
 
 ## 9. Common Agent Tasks
