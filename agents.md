@@ -86,7 +86,7 @@ This is a **static site with a Python build step**. Markdown content files are c
 
 - **Talks**: edit `content/talks.md` with standard markdown. Sections, lists, links all supported.
 - **Home page**: edit `content/index.md`. YAML frontmatter controls structured data (links with `icon` field, meta, CTAs). Markdown body controls bio prose.
-- **Link icons**: each link entry in `content/index.md` has an `icon` field (e.g. `book`, `scroll`, `pickaxe`). The matching SVG lives at `assets/img/icons/<icon>.svg`. To add a new icon, create a 16×16 SVG with `shape-rendering="crispEdges"` and reference it in the YAML.
+- **Link icons**: each link entry in `content/index.md` has an `icon` field (e.g. `book`, `scroll`, `pickaxe`). The matching SVG lives at `assets/img/icons/<icon>.svg`. Icons are scaled to ~56px in the inventory tray; keep pixel-art style (16×16 source) with `shape-rendering="crispEdges"`.
 - **Avatar**: replace `assets/img/avatar.png` (keep square dimensions).
 - **Palette**: adjust CSS variables at top of `assets/css/style.css`.
 - **Typography**: change `data-font` attribute in `templates/base.html` and corresponding CSS selectors.
@@ -97,7 +97,8 @@ This is a **static site with a Python build step**. Markdown content files are c
 - [ ] `just check` passes all smoke tests.
 - [ ] `just serve` → visual inspection on mobile (<640px) and desktop.
 - [ ] Inventory tray opens on sword-button click, closes on ✕ / ESC / backdrop click.
-- [ ] All inventory slot icons render as pixelated SVGs with correct links.
+- [ ] Inventory tray visually matches the wooden crate (brown wood, beveled slots, 4-col desktop / 2-col mobile).
+- [ ] All inventory slot icons render as pixelated SVGs with correct links (scaled to ~56px).
 - [ ] `dist/talks.html` contains pre-rendered talk content (no loading spinner).
 - [ ] All external links open in new tabs where intended.
 - [ ] `dist/CNAME` contains `farhaan.bukh.sh`.
@@ -105,7 +106,7 @@ This is a **static site with a Python build step**. Markdown content files are c
 
 ## 9. Common Agent Tasks
 
-- **Add/update links**: edit the `links` list in `content/index.md`, ensure `icon` matches an SVG in `assets/img/icons/`, run `just build`.
+- **Add/update links**: edit the `links` list in `content/index.md`, ensure `icon` matches an SVG in `assets/img/icons/`, run `just build`. Icons display at ~56px inside the wooden inventory tray.
 - **Add/update talks**: edit `content/talks.md`, run `just build`, verify `dist/talks.html`.
 - **Revise home copy**: edit `content/index.md` frontmatter/body, run `just build`.
 - **Tweak colors**: edit CSS variables in `assets/css/style.css`, document in `README.md`.
