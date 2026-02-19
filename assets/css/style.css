@@ -588,17 +588,25 @@ code {
   position: absolute;
   top: 6px;
   right: 10px;
-  background: none;
-  border: none;
-  font-size: 1.1rem;
+  background: #4b2f1a;
+  border: 2px solid;
+  border-color: #c08a52 #2a1a0e #2a1a0e #c08a52;
+  font-size: 1.2rem;
   color: #f3e3c8;
   cursor: pointer;
   line-height: 1;
-  padding: 2px 6px;
+  padding: 6px 10px;
+  min-width: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
 }
 
 .inventory-tray__close:hover {
   color: #f5df4d;
+  background: #5a3820;
 }
 
 /* Slot grid */
@@ -873,6 +881,17 @@ body[data-font='sleek'] .section-heading h2 {
 
   .inventory-tray {
     max-width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .inventory-tray__close {
+    top: 4px;
+    right: 4px;
+    font-size: 1.4rem;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 8px 12px;
   }
 }
 
