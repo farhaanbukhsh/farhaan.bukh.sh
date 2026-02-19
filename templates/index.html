@@ -30,20 +30,31 @@
       </div>
     </section>
 
-    <section class="links" id="links">
-      <div class="section-heading">
-        <p class="eyebrow">{{ links_eyebrow }}</p>
-        <h2>{{ links_heading }}</h2>
-        <p>{{ links_sub }}</p>
-      </div>
-      <div class="link-grid">
-        {% for card in links %}
-        <a class="link-card{% if card.accent %} accent{% endif %}" href="{{ card.url }}"{% if card.external %} target="_blank" rel="noopener"{% endif %}>
-          <span class="link-card__label">{{ card.label }}</span>
-          <h3>{{ card.title }}</h3>
-          <p>{{ card.description }}</p>
-        </a>
-        {% endfor %}
+    <section class="inventory-section" id="links">
+      <button class="inventory-toggle" type="button" data-inventory-toggle aria-expanded="false" aria-label="Open inventory">
+        <img src="assets/img/icons/sword.svg" alt="" width="48" height="48" class="inventory-toggle__icon" />
+        <span class="inventory-toggle__label">Open Inventory</span>
+      </button>
+
+      <div class="inventory-overlay" data-inventory-overlay data-open="false" aria-hidden="true">
+        <div class="inventory-tray" data-inventory-tray role="dialog" aria-label="Inventory — Signal relays">
+          <div class="inventory-tray__header">
+            <h2 class="inventory-tray__title">{{ links_heading }}</h2>
+            <p class="inventory-tray__sub">{{ links_sub }}</p>
+            <button class="inventory-tray__close" type="button" data-inventory-close aria-label="Close inventory">✕</button>
+          </div>
+          <div class="inventory-grid">
+            {% for card in links %}
+            <a class="inventory-slot{% if card.accent %} inventory-slot--accent{% endif %}" href="{{ card.url }}"{% if card.external %} target="_blank" rel="noopener"{% endif %}>
+              {% if card.icon %}
+              <img src="assets/img/icons/{{ card.icon }}.svg" alt="" width="32" height="32" class="inventory-slot__icon" />
+              {% endif %}
+              <span class="inventory-slot__label">{{ card.label }}</span>
+              <span class="inventory-slot__title">{{ card.title }}</span>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </section>
   </main>

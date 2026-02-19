@@ -68,3 +68,15 @@ execute the plan
 remove the talk and workshop section from the front page run the changes before making it.
 ```
 **Outcome**: Removed the `talks-preview` section from `templates/index.html`, dropped the three `talks_preview_*` frontmatter fields from `content/index.md`, and cleaned up the corresponding render args in `build.py`. Rebuilt with `just clean && just build && just check` — all passing, section confirmed absent from `dist/index.html`. Talks page (`talks.html`) and nav link remain intact.
+
+## 2026-02-18 17:50 IST — Minecraft Inventory Tray for Signal Relays
+```
+I need to change the signal relay section to look like an item selection tray where each item is the card displaying it. Use icons for each of the sections in the minecraft pixelated way. The tray will open when the user click a button, which has the mincraft sword icon.
+```
+**Outcome**: Replaced the card grid with a Minecraft-style inventory UI:
+- Created 9 pixel-art SVG icons (`assets/img/icons/`): sword (toggle button), book (blog), scroll (resume), pickaxe (GitHub), feather (Twitter), diamond (LinkedIn), redstone (Stack Overflow), envelope (email), disc (talks). Generated via a temporary Python script using 16×16 grids.
+- Added `icon` field to each link in `content/index.md`.
+- Rewrote the links section in `templates/index.html` as a sword-button → overlay → inventory tray with slotted grid.
+- Added full inventory CSS to `assets/css/style.css`: Minecraft beveled borders (`#c6c6c6` stone panel, `#8b8b8b` slots, 3D border colors), floating sword animation, overlay backdrop, responsive 2-column on mobile.
+- Updated `assets/js/main.js` with open/close/ESC/backdrop-click handlers for the tray overlay.
+- Build passes: `just clean && just build && just check` all green.

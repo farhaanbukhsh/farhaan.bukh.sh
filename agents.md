@@ -21,13 +21,14 @@ This is a **static site with a Python build step**. Markdown content files are c
 ├── assets/                        # Static assets (copied verbatim into dist/)
 │   ├── css/style.css
 │   ├── img/avatar.png
-│   └── js/main.js                 # Nav toggle + year stamp (client-side)
+│   ├── img/icons/                 # Pixel-art SVG icons (sword, book, scroll, etc.)
+│   └── js/main.js                 # Nav toggle, inventory tray toggle, year stamp
 ├── content/                       # Editable markdown source files
 │   ├── index.md                   # Home page data (YAML frontmatter + markdown body)
 │   └── talks.md                   # Talks list (pure markdown)
 ├── templates/                     # Jinja2 HTML templates
 │   ├── base.html                  # Shared shell (head, nav, footer)
-│   ├── index.html                 # Home page (hero, links, talks preview)
+│   ├── index.html                 # Home page (hero, inventory tray)
 │   └── talks.html                 # Talks page (pre-rendered markdown)
 ├── build.py                       # Python build script
 ├── justfile                       # Task runner recipes
@@ -84,7 +85,8 @@ This is a **static site with a Python build step**. Markdown content files are c
 ## 7. Updating Content
 
 - **Talks**: edit `content/talks.md` with standard markdown. Sections, lists, links all supported.
-- **Home page**: edit `content/index.md`. YAML frontmatter controls structured data (links, meta, CTAs). Markdown body controls bio prose.
+- **Home page**: edit `content/index.md`. YAML frontmatter controls structured data (links with `icon` field, meta, CTAs). Markdown body controls bio prose.
+- **Link icons**: each link entry in `content/index.md` has an `icon` field (e.g. `book`, `scroll`, `pickaxe`). The matching SVG lives at `assets/img/icons/<icon>.svg`. To add a new icon, create a 16×16 SVG with `shape-rendering="crispEdges"` and reference it in the YAML.
 - **Avatar**: replace `assets/img/avatar.png` (keep square dimensions).
 - **Palette**: adjust CSS variables at top of `assets/css/style.css`.
 - **Typography**: change `data-font` attribute in `templates/base.html` and corresponding CSS selectors.
@@ -94,6 +96,8 @@ This is a **static site with a Python build step**. Markdown content files are c
 - [ ] `just build` completes without errors.
 - [ ] `just check` passes all smoke tests.
 - [ ] `just serve` → visual inspection on mobile (<640px) and desktop.
+- [ ] Inventory tray opens on sword-button click, closes on ✕ / ESC / backdrop click.
+- [ ] All inventory slot icons render as pixelated SVGs with correct links.
 - [ ] `dist/talks.html` contains pre-rendered talk content (no loading spinner).
 - [ ] All external links open in new tabs where intended.
 - [ ] `dist/CNAME` contains `farhaan.bukh.sh`.
@@ -101,6 +105,7 @@ This is a **static site with a Python build step**. Markdown content files are c
 
 ## 9. Common Agent Tasks
 
+- **Add/update links**: edit the `links` list in `content/index.md`, ensure `icon` matches an SVG in `assets/img/icons/`, run `just build`.
 - **Add/update talks**: edit `content/talks.md`, run `just build`, verify `dist/talks.html`.
 - **Revise home copy**: edit `content/index.md` frontmatter/body, run `just build`.
 - **Tweak colors**: edit CSS variables in `assets/css/style.css`, document in `README.md`.
