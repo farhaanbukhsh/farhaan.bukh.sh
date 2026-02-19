@@ -12,7 +12,7 @@ bio: |
   powers communities like Open edX & Fedora. I obsess over pragmatic DX, resilient infrastructure, and keeping the
   whimsical energy of the command line alive.
 
-links_eyebrow: "Signal relays"
+links_eyebrow: "Inventory"
 links_heading: "Drop in, read, or collaborate."
 links_sub: "Each card jumps straight into the ecosystems I'm active in."
 
