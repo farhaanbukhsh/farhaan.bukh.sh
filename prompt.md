@@ -103,3 +103,53 @@ Plan to add minecraft item in the backdrop of the website, like minecraft flower
 - No JS needed — pure CSS animations with `will-change: transform` for GPU compositing.
 - Updated `agents.md` (repo layout, backdrop docs, QA checklist).
 - Rebuilt: `just clean && just build && just check` (all green).
+
+## 2026-02-19 01:00 IST — Backdrop items visibility & colour pop
+```
+Bring them in front so that they are visible and their colour pops
+```
+**Outcome**:
+- Changed `.backdrop-items` z-index from `-1` to `0` so items render in front of the background.
+- Increased `.backdrop-item` opacity from `0.07` to `0.35`.
+- Added `filter: saturate(1.6) brightness(1.3) drop-shadow(0 0 6px rgba(255,255,255,0.15))` for vivid colours and subtle glow.
+- Rebuilt: `just clean && just build && just check` (all green).
+
+## 2026-02-19 01:15 IST — Inventory button: 3D wooden box look
+```
+Plan to make the Open Inventory button stand out, it should have the wooden box look and 3d visual.
+```
+**Outcome**:
+- Restyled `.inventory-toggle` as a raised wooden block: wood background (`#6b4322`) with grain gradient, thick beveled border (`#c08a52` / `#3a2514`), 3D lift via `box-shadow: 0 6px 0`, inset highlights.
+- Added hover (float up, brighter), active (press down, shadow flattens) states.
+- Recoloured label to warm cream (`#f3e3c8`) with engraved text-shadow.
+- Changed sword icon glow from teal to warm amber.
+- Rebuilt: `just clean && just build && just check` (all green).
+
+## 2026-02-19 01:30 IST — Minecraft chocolate bar button with wrapper
+```
+The button looks good, I want to turn the button to look like minecraft choclate, where the button remains the same but it will have choclate wrapper in the bottom of pink shade.
+```
+**Outcome**:
+- Restyled button as dark chocolate (`#1c1008`) with grid-square pattern.
+- Added `::before` pseudo-element: white paper/foil strip across the middle, extends beyond button edges.
+- Added `::after` pseudo-element: pink wrapper covering bottom 55% with concentric pink/white/pink banding.
+- On hover: wrapper and foil slide down and fade out (0.4s ease) revealing the chocolate.
+- Rebuilt: `just clean && just build && just check` (all green).
+
+## 2026-02-19 02:00 IST — Wrapper hover refinement, sword removal, label placement
+```
+Take inspiration from "~/Documents/Screenshot 2026-02-19 at 12.16.35 PM.png" the wrapper should be on and when the user hover it should come off.
+```
+```
+Remove the sword icon from the button, animate the whole button to wiggle just like how sword is wiggling now, move the text "Open Inventory" to the top of the choclate bar.
+```
+```
+The wrapper should not dissapear but move a bit down, the "Open Inventory" text should be on the brown area of choclate. The animation is fine, on hover the wrapper needs to move down a bit but not disappear. The size of the button can be a bit bigger.
+```
+**Outcome**:
+- Removed sword `<img>` from `templates/index.html`; removed `.inventory-toggle__icon` CSS and `@keyframes sword-bob`.
+- Added `@keyframes choco-bob` on the whole button (±2° rotation, 6px float, 2.5s loop); pauses on hover with `animation: none`.
+- Moved "Open Inventory" label onto the chocolate face (normal flow, `position: relative`, z-index 3) — no longer floating above.
+- Wrapper hover changed from fade-out to gentle peek-down: pink wrapper slides 18px, foil strip slides 14px, both stay fully visible.
+- Button enlarged: `padding: 1.8rem 3.2rem 3rem`, `min-width: 240px`, `min-height: 130px`.
+- Rebuilt: `just clean && just build && just check` (all green).

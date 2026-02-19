@@ -92,7 +92,8 @@ This is a **static site with a Python build step**. Markdown content files are c
 - **Link icons**: each link entry in `content/index.md` has an `icon` field (e.g. `book`, `scroll`, `pickaxe`). The matching SVG lives at `assets/img/icons/<icon>.svg`. Icons are scaled to ~56px in the inventory tray; keep pixel-art style (16×16 source) with `shape-rendering="crispEdges"`.
 - **Avatar**: replace `assets/img/avatar.png` (keep square dimensions).
 - **Palette**: adjust CSS variables at top of `assets/css/style.css`.
-- **Backdrop items**: 18 decorative Minecraft pixel-art SVGs are scattered across the page via `.backdrop-items` in `templates/base.html`. Each `<img>` uses a `.backdrop-item--N` class positioned/rotated via CSS custom properties in `assets/css/style.css`. To add/remove items: edit the HTML list in `base.html` and the corresponding `.backdrop-item--N` CSS rule. Items are fixed-position, low opacity (0.07), with a gentle float animation. 9 of 18 are hidden on mobile (<640px).
+- **Backdrop items**: 18 decorative Minecraft pixel-art SVGs are scattered across the page via `.backdrop-items` in `templates/base.html`. Each `<img>` uses a `.backdrop-item--N` class positioned/rotated via CSS custom properties in `assets/css/style.css`. To add/remove items: edit the HTML list in `base.html` and the corresponding `.backdrop-item--N` CSS rule. Items are fixed-position, opacity 0.35 with saturated/brightened filter, with a gentle float animation. 9 of 18 are hidden on mobile (<640px).
+- **Inventory button (chocolate bar)**: The "Open Inventory" button is styled as a Minecraft chocolate bar. Dark chocolate body (`#1c1008`) with grid-square pattern, white paper/foil strip (`::before`) across the middle extending beyond edges, pink wrapper (`::after`) covering the bottom 55% with concentric pink/white banding. The whole button wobbles via `@keyframes choco-bob` (±2° rotation, 6px float, 2.5s). On hover: animation pauses, wrapper and foil slide down ~14–18px (stay visible, don't disappear). Label ("Open Inventory") sits on the chocolate face in normal flow. No sword icon — removed.
 - **Typography**: change `data-font` attribute in `templates/base.html` and corresponding CSS selectors.
 
 ## 8. QA Checklist Before Deploy
@@ -100,14 +101,15 @@ This is a **static site with a Python build step**. Markdown content files are c
 - [ ] `just build` completes without errors.
 - [ ] `just check` passes all smoke tests.
 - [ ] `just serve` → visual inspection on mobile (<640px) and desktop.
-- [ ] Inventory tray opens on sword-button click, closes on ✕ / ESC / backdrop click.
+- [ ] Inventory tray opens on chocolate-bar button click, closes on ✕ / ESC / backdrop click.
 - [ ] Inventory tray visually matches the wooden crate (brown wood, beveled slots, 4-col desktop / 2-col mobile).
 - [ ] All inventory slot icons render as pixelated SVGs with correct links (scaled to ~56px).
 - [ ] Hero layout: single column, avatar + status centered above headline and paragraph; no CTAs or meta badges.
 - [ ] `dist/talks.html` contains pre-rendered talk content (no loading spinner).
 - [ ] All external links open in new tabs where intended.
 - [ ] `dist/CNAME` contains `farhaan.bukh.sh`.
-- [ ] Backdrop items visible as faint floating Minecraft icons behind content; non-interactive (`pointer-events: none`).
+- [ ] Backdrop items visible as floating Minecraft icons (opacity 0.35, saturated colours) behind content; non-interactive (`pointer-events: none`).
+- [ ] Chocolate bar button wobbles, label on brown face, wrapper/foil peek down on hover (don't disappear).
 - [ ] No `talks.js` or `marked.min.js` references remain in generated HTML.
 
 ## 9. Common Agent Tasks
