@@ -1,7 +1,7 @@
 ---
-title: "Farhaan Bukhsh · Engineer & Storyteller"
+title: "Farhaan Bukhsh · Engineer & Poet and More"
 description: "Farhaan Bukhsh — Engineer, FOSS advocate, storyteller."
-status_chip: "Engineer · FOSS Evangelist"
+status_chip: "Engineer · Learning 🦀 . Crafting Software with ❤️ and Nvim"
 
 eyebrow: "DON'T PANIC"
 eyebrow_sub: "— still building with curiosity."

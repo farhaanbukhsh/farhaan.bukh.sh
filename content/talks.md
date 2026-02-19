@@ -1,28 +1,39 @@
 # Talks Log
 
-> Update this markdown file and push to `main`. The Talks page fetches this content directly and renders it.
-> Keep reverse-chronological order per section. Link recordings, slides, code, or recap posts as needed.
-
 ## Upcoming
 
-- *2025-03-15* — **(Title goes here)** · _Conference / City_
-  - Slides: <https://example.com/slides>
-  - Recording: <https://example.com/recording>
-  - Notes: Add context, themes, or collaborators.
+## 2025
+
+1. **WASM and Python: The Future of Serverless Computing** · Europython (Prague)
+    - Co-Speaker: Kumar Anirudha
+    - Recording: <https://www.youtube.com/watch?v=qes-hzyVIGU>
+    - TL;DR: WASM in python ecosystem.
+
+2. **How to Become a Contributor? An Open Source Masterclass** · Open edX Conf (Paris)
+    - Co-speaker: Xavier Antoviaque; Arunmozhi Periasamy (OpenCraft); Rémi Sharrock; Marc Jeanmougin (Télécom Paris)
+    - Recording: <https://www.youtube.com/watch?v=S0OyqoSk-cU>
+    - TL;DR: Walk through the Open Source Masterclass course.
+
+3.  **Open edX In-Context Metrics: Learnings and key takeaways** · Open edX Conf (Paris)
+    - Recording: <https://www.youtube.com/watch?v=U33wPcoaILQ>
+    - TL;DR: How we built In-Context Metric and the challenges we faced while doing it.
 
 ## 2024
 
-1. *2024-11-09* — **Designing Calm Systems** · DevConf (Virtual)
-   - Slides: <https://example.com/devconf-slides>
-   - Recording: <https://example.com/devconf-recording>
-   - TL;DR: Observability-first thinking for open infrastructure.
+1.  **Flexible Credentials in the Open edX Platform**  · Open edX Conf (Stellenbosch)
+      - Co-speaker: Piotr Surowiec
+      - Recording: <https://www.youtube.com/watch?v=x96vvsGwsko&t>
+      - TL;DR: Credential in Open edX ecosystem.
 
-2. *2024-08-21* — **From Fedora to Production** · Local Meetup, Bengaluru
-   - Slides: <https://example.com/fedora-slides>
-   - Recap: <https://journal.farhaan.me/fedora-meetup>
+## 2017
 
-## Archive
+1. **Pagure: Past, Present and Future** · PyCon Pune (Pune)
+    - Co-Speaker: Vivek Anand
+    - Recording: <https://www.youtube.com/watch?v=5E_VekmbNGk>
+    - TL;DR: Work that is being done on Pagure
 
-- Keep previous years grouped just like above.
-- Markdown supports tables, lists, quotes, and inline code.
-- Use emojis or badges if you want extra flavor — it's all parsed safely.
+## 2015
+
+1. **Lightning Talk: Dgplug** · PyCon India (Bangalore)
+    - Recording: <https://www.youtube.com/watch?v=RW8A_alJQco&t=20s>
+    - TL;DR: How DGPLUG can help you contribute to Open Source.
