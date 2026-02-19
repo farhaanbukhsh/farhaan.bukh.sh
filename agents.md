@@ -85,7 +85,7 @@ This is a **static site with a Python build step**. Markdown content files are c
 ## 7. Updating Content
 
 - **Talks**: edit `content/talks.md` with standard markdown. Sections, lists, links all supported.
-- **Home page**: edit `content/index.md`. YAML frontmatter controls structured data (links with `icon` field, meta, CTAs). Markdown body controls bio prose.
+- **Home page**: edit `content/index.md`. YAML frontmatter controls structured data (links with `icon` field). Markdown body controls bio prose. Note: hero CTAs and meta badges were removed; hero is a single stacked column with centered avatar + status chip above the headline.
 - **Link icons**: each link entry in `content/index.md` has an `icon` field (e.g. `book`, `scroll`, `pickaxe`). The matching SVG lives at `assets/img/icons/<icon>.svg`. Icons are scaled to ~56px in the inventory tray; keep pixel-art style (16×16 source) with `shape-rendering="crispEdges"`.
 - **Avatar**: replace `assets/img/avatar.png` (keep square dimensions).
 - **Palette**: adjust CSS variables at top of `assets/css/style.css`.
@@ -99,6 +99,7 @@ This is a **static site with a Python build step**. Markdown content files are c
 - [ ] Inventory tray opens on sword-button click, closes on ✕ / ESC / backdrop click.
 - [ ] Inventory tray visually matches the wooden crate (brown wood, beveled slots, 4-col desktop / 2-col mobile).
 - [ ] All inventory slot icons render as pixelated SVGs with correct links (scaled to ~56px).
+- [ ] Hero layout: single column, avatar + status centered above headline and paragraph; no CTAs or meta badges.
 - [ ] `dist/talks.html` contains pre-rendered talk content (no loading spinner).
 - [ ] All external links open in new tabs where intended.
 - [ ] `dist/CNAME` contains `farhaan.bukh.sh`.

@@ -9,24 +9,8 @@ headline: "Shipping human stories through code, communities, and open systems."
 
 bio: |
   I'm Farhaan, currently exploring the intersection of distributed systems, poems, and the openness that
-  powers communities like Fedora. I obsess over pragmatic DX, resilient infrastructure, and keeping the
+  powers communities like Open edX & Fedora. I obsess over pragmatic DX, resilient infrastructure, and keeping the
   whimsical energy of the command line alive.
-
-cta:
-  - label: "Open comms"
-    url: "mailto:farhaan.bukhsh@gmail.com"
-    style: "primary"
-  - label: "View talks"
-    url: "talks.html"
-    style: "ghost"
-
-meta:
-  - label: "Now"
-    text: "Building humane developer experiences & advocating for FOSS inside and outside Fedora."
-  - label: "Previously"
-    text: "Projects across product engineering, community leadership, and rapid prototyping."
-  - label: "Keywords"
-    text: "Platform Engineering · Fedora · Storytelling · OSS strategy · Observability"
 
 links_eyebrow: "Signal relays"
 links_heading: "Drop in, read, or collaborate."
@@ -34,7 +18,7 @@ links_sub: "Each card jumps straight into the ecosystems I'm active in."
 
 links:
   - label: "Blog"
-    title: "Field Notes & Experiments"
+    title: "Field Notes"
     description: "Long-form writing on systems, craftsmanship, and whatever the cosmos whispers."
     url: "https://journal.farhaan.me"
     icon: "book"
@@ -47,7 +31,7 @@ links:
     external: true
     accent: true
   - label: "GitHub"
-    title: "Code & Contributions"
+    title: "Code"
     description: "Current repos, Fedora packaging notes, and everyday tinkering."
     url: "https://github.com/farhaanbukhsh"
     icon: "pickaxe"
@@ -71,9 +55,9 @@ links:
     icon: "redstone"
     external: true
   - label: "Email"
-    title: "farhaan.bukhsh@gmail.com"
+    title: "farhaan@bukh.sh"
     description: "Fastest way to sync on collaborations, speaking, or OSS pushes."
-    url: "mailto:farhaan.bukhsh@gmail.com"
+    url: "mailto:farhaan@bukh.sh"
     icon: "envelope"
     external: false
   - label: "Talk archives"

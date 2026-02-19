@@ -80,3 +80,13 @@ I need to change the signal relay section to look like an item selection tray wh
 - Added full inventory CSS to `assets/css/style.css`: Minecraft beveled borders (`#c6c6c6` stone panel, `#8b8b8b` slots, 3D border colors), floating sword animation, overlay backdrop, responsive 2-column on mobile.
 - Updated `assets/js/main.js` with open/close/ESC/backdrop-click handlers for the tray overlay.
 - Build passes: `just clean && just build && just check` all green.
+
+## 2026-02-19 00:00 IST — Remove Signal Relay nav, hero CTAs/meta, and center avatar
+```
+Plan to remove the "Signal Relay" from the header, the next set of tasks are 1. Remove Open Comms and View talks button. 2. Remove "Now", "Previous" and "Keyword Section". 3. Move the Picture and tag, to the center just above "I'm Farhaan" para.
+```
+**Outcome**:
+- Removed “Signal relays” link from the header nav.
+- Removed hero CTAs (Open comms, View talks) and meta list (Now/Previously/Keywords) from `templates/index.html`; removed meta/cta entries from `content/index.md`.
+- Reflowed hero to a single stacked column: eyebrow → centered avatar + status chip → headline → paragraph. Updated CSS for center layout.
+- Rebuilt: `just clean && just build && just check` (all green).

@@ -178,14 +178,24 @@ code {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
-  gap: clamp(2rem, 4vw, 4rem);
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: center;
+  justify-items: center;
   margin-top: 3rem;
+  text-align: center;
 }
 
-.hero__profile {
-  text-align: center;
+.hero__copy--stacked {
+  display: grid;
+  gap: 1.2rem;
+  justify-items: center;
+}
+
+.hero__avatar-block {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: center;
 }
 
 .avatar-frame {
@@ -246,29 +256,6 @@ code {
   margin-bottom: 1rem;
 }
 
-.hero__meta {
-  list-style: none;
-  margin: 2rem 0 0;
-  padding: 0;
-  display: grid;
-  gap: 1rem;
-}
-
-.hero__meta li {
-  background: rgba(4, 16, 25, 0.7);
-  border: 1px solid var(--card-border);
-  border-radius: 1rem;
-  padding: 1rem;
-}
-
-.hero__meta span {
-  display: block;
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-cloud);
-  margin-bottom: 0.4rem;
-}
 
 .btn {
   display: inline-flex;

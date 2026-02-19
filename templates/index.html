@@ -3,30 +3,17 @@
 {% block content %}
   <main>
     <section class="hero" id="mission">
-      <div class="hero__profile">
-        <div class="avatar-frame">
-          <img src="assets/img/avatar.png" alt="Portrait of Farhaan Bukhsh" width="240" height="240" loading="lazy" />
-          <div class="avatar-glow" aria-hidden="true"></div>
-        </div>
-        <p class="status-chip">{{ status_chip }}</p>
-      </div>
-      <div class="hero__copy">
+      <div class="hero__copy hero__copy--stacked">
         <p class="eyebrow">{{ eyebrow }} <span>{{ eyebrow_sub }}</span></p>
+        <div class="hero__avatar-block">
+          <div class="avatar-frame">
+            <img src="assets/img/avatar.png" alt="Portrait of Farhaan Bukhsh" width="240" height="240" loading="lazy" />
+            <div class="avatar-glow" aria-hidden="true"></div>
+          </div>
+          <p class="status-chip">{{ status_chip }}</p>
+        </div>
         <h1>{{ headline }}</h1>
         <p>{{ bio }}</p>
-        <div class="cta-row">
-          {% for btn in cta %}
-          <a class="btn btn--{{ btn.style }}" href="{{ btn.url }}">{{ btn.label }}</a>
-          {% endfor %}
-        </div>
-        <ul class="hero__meta" role="list">
-          {% for item in meta %}
-          <li>
-            <span>{{ item.label }}</span>
-            {{ item.text }}
-          </li>
-          {% endfor %}
-        </ul>
       </div>
     </section>
 
