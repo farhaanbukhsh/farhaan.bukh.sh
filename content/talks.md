@@ -2,6 +2,14 @@
 
 ## Upcoming
 
+## 2026
+
+1. **Type to Trust: Safer API Design in Rust** · Rust Conf India (Bangalore)
+    - Recording: <https://youtu.be/xPWuTPfI6Xs?t=23463>
+    - [Slides](../assets/type-driven-api-design-feluda.pdf)
+    - TL;DR: Type Driven API Design.
+
+
 ## 2025
 
 1. **WASM and Python: The Future of Serverless Computing** · Europython (Prague)
