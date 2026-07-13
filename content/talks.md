@@ -9,6 +9,12 @@
     - [Slides](../assets/type-driven-api-design-feluda.pdf)
     - TL;DR: Type Driven API Design.
 
+2. **Python Games in the Browser** · EuroPython (Krakow)
+    - Recording: TBD
+    - [Slides](../assets/Python_Games_in_the_Browser_final.pdf)
+    - TL;DR: TBD.
+
+
 
 ## 2025
 
