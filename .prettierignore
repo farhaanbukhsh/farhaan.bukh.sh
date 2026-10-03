@@ -1,0 +1,3 @@
+# Python-Markdown requires 4-space indent for nested lists;
+# Prettier normalizes to 3 spaces and breaks talks page rendering.
+content/talks.md
